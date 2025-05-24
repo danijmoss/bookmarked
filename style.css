@@ -493,6 +493,19 @@ a[rel~="tag"] {
         width: auto;
     }
 
+    .book-review-cards {
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        gap: 0.25rem;
+    }
+
+    .book-review-card {
+        width: 90%;
+        max-width: 200px;
+        padding: 1rem;
+        height:auto;
+        margin-bottom: 1.3rem;
+    }
+
     .blog-posts {
         gap: 1rem;
         margin-bottom: 2rem;
@@ -506,7 +519,7 @@ a[rel~="tag"] {
     }
 
     .button.all-reviews-btn {
-        margin-left: 7.5rem;
+        margin-left: 1rem;
     }
     
     .button.all-posts-btn {
@@ -517,6 +530,16 @@ a[rel~="tag"] {
 
 /* Tablet View */
 @media screen and (min-width:720px) {
+    .book-review-cards {
+        grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+        gap: 0.25rem;
+    }
+
+    .book-review-card {
+        max-width: none;
+        width: 70%
+    }
+
     .blog-posts {
         gap: 1.5rem;
         margin-bottom: 2rem;
@@ -548,7 +571,7 @@ a[rel~="tag"] {
     .site-logo img {
         max-height: 60px;
         height: auto;
-        width: auto;
+        width: 195px;
     }
     
     /* Navigation Menu */
@@ -616,6 +639,14 @@ a[rel~="tag"] {
     /* Reviews */
     .book-reviews .section-header {
         font-size: 1.5rem;
+    }
+
+    .button.all-reviews-btn {
+        margin-left: 2.5rem;
+    }
+
+    .blog-card img {
+        width: 70%;
     }
 
 
@@ -693,6 +724,19 @@ a[rel~="tag"] {
 }
 
 @media screen and (min-width: 800px) {
+    .book-review-cards {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        justify-content: center;
+    }
+
+    .book-review-card {
+        width: 80%;
+    }
+
+    .button.all-reviews-btn {
+        margin-left: 1rem;
+    }
+
     .blog-card {
         max-width: 190px;
     }
