@@ -20,68 +20,17 @@
 
     <img class="divider" src="<?php echo get_template_directory_uri(); ?>/images/divider.png">
 
-    <!-- newest reviews -->
-    <section class="book-reviews">
-        <h2 class="section-header">Newest Reviews</h2>
 
-        <div class="book-review-cards">
-            <?php
-            $args = array(
-                'post_type'      => 'book-review',
-                'posts_per_page' => 3,
-                'orderby'        => 'date',
-                'order'          => 'ASC',
-            );
-
-            $newest_reviews_query = new WP_Query($args);
-
-            if ($newest_reviews_query->have_posts()) :
-                while ($newest_reviews_query->have_posts()) : $newest_reviews_query->the_post();
-                    $rating = get_field('book_rating');
-                    $format = get_field('format');
-            ?>
-                <article class="book-review-card">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <a href="<?php the_permalink(); ?>" class="book-cover">
-                            <?php the_post_thumbnail('medium'); ?>
-                        </a>
-                    <?php endif; ?>
-
-                    <div class="book-info">
-                        <h3 class="book-title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </h3>
-
-                        <?php if ($rating) : ?>
-                            <p class="rating"><strong>Rating:</strong> <?php echo esc_html($rating); ?>/5</p>
-                        <?php endif; ?>
-
-                        <?php if ($format) : ?>
-                            <p class="format"><strong>Format:</strong> <?php echo esc_html($format); ?></p>
-                        <?php endif; ?>
-                    </div>
-                </article>
-            <?php
-                endwhile;
-                wp_reset_postdata();
-            else :
-                echo '<p>No book reviews found.</p>';
-            endif;
-            ?>
-        </div>
-    </section>
-
-    <img class="divider" src="<?php echo get_template_directory_uri(); ?>/images/divider.png">
 
     <!-- book reviews -->
     <section class="book-reviews">
-        <h2 class="section-header">Recent Book Reviews</h2>
+        <h2 class="section-header">Newest Book Reviews</h2>
 
         <div class="book-review-cards">
             <?php
             $args = array(
                 'post_type'      => 'book-review',
-                'posts_per_page' => 3,
+                'posts_per_page' => 12,
                 'orderby'        => 'date',
                 'order'          => 'DESC',
             );
