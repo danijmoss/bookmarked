@@ -50,9 +50,14 @@ a:hover {
 }
 
 
-/* Header with Navigation and Search */
+/* Menu with Navigation and Search */
 .site-header {
     padding: 1em;
+}
+
+.custom-logo {
+    width: 90%;
+    height: auto; 
 }
 
 .header-grid {
@@ -134,18 +139,6 @@ a:hover {
     padding: 1.5rem;
 }
 
-
-@media (max-width: 768px) {
-    .image-text-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .section-text {
-        margin-top: 1.5em;
-    }
-}
-
   
 /* Page Divider */
 .divider {
@@ -158,12 +151,12 @@ a:hover {
 
 /* Reviews */
 .book-reviews {
-    padding: 2rem 0;
+    padding: 0;
 }
 
-.book-reviews .section-header {
-    text-align: left;
-    font-size: 1rem;
+.section-header {
+    text-align: center;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 2rem;
 }
@@ -176,6 +169,10 @@ a:hover {
     color: var(--text);
     text-decoration: none;
     font-weight: var(--text-weight-heavy);
+}
+
+.button.all-reviews-btn {
+    margin-left: 15px;
 }
 
 .book-review-cards {
@@ -191,10 +188,13 @@ a:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 100%;
-    max-width: 350px;
+    max-width: 250px;
+    height: auto;
     display: flex;
     flex-direction: column;
     transition: box-shadow 0.3s ease;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 .book-review-card:hover {
@@ -202,10 +202,8 @@ a:hover {
 }
 
 .book-review-card .book-cover img {
-    width: 100%;
-    height: 200px;
+    width: 80%;
     object-fit: contain;
-    padding: 1.25rem 0 0;
 }
 
 .book-review-card .book-info {
@@ -247,10 +245,11 @@ a:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 100%;
-    max-width: 350px;
+    max-width: 250px;
     display: flex;
     flex-direction: column;
     transition: box-shadow 0.3s ease;
+    padding: 1rem;
 }
 
 .blog-card:hover {
@@ -258,10 +257,9 @@ a:hover {
 }
 
 .blog-card img{
-    width: 100%;
-    height: 200px;
+    width: 90%;
     object-fit: contain;
-    padding: 1.25rem 0 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .blog-card .post-info {
@@ -286,6 +284,11 @@ a:hover {
 .post-date {
     margin: 0;
 }
+
+.button.all-posts-btn {
+    margin-left: 15px;
+}
+
 
 /* Blog Posts - Main Blog Page */
 .main-blog-heading {
@@ -469,7 +472,65 @@ a[rel~="tag"] {
     text-decoration: underline;
 }
 
+@media screen and (min-width: 400px) {
+    .book-review-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .button.all-reviews-btn {
+        margin-left: 3.5rem;
+    }
+    
+    .button.all-posts-btn {
+        margin-left: 3.5rem;
+    }
+}
+
+@media screen and (min-width: 530px) {
+    .site-logo img {
+        max-height: 70px;
+        height: auto;
+        width: auto;
+    }
+
+    .blog-posts {
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .blog-card {
+        width: 90%;
+        max-width: 200px;
+        padding: 1rem;
+        height:auto;
+    }
+
+    .button.all-reviews-btn {
+        margin-left: 7.5rem;
+    }
+    
+    .button.all-posts-btn {
+        margin-left: 1rem;
+    }
+
+}
+
 /* Tablet View */
+@media screen and (min-width:720px) {
+    .blog-posts {
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .blog-card {
+        width: 90%;
+        max-width: 275px;
+        padding: 1rem;
+        height:auto;
+    }
+}
+
+
 @media screen and (min-width: 750px) {
  
     .site-header {
@@ -620,6 +681,23 @@ a[rel~="tag"] {
 
 }
 
+@media screen and (min-width: 768px) {
+    .image-text-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .section-text {
+        margin-top: 1.5em;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .blog-card {
+        max-width: 190px;
+    }
+}
+
 /* Desktop View */
 @media screen and (min-width: 1000px) {
     body {
@@ -651,6 +729,14 @@ a[rel~="tag"] {
         padding: 2.5rem;
         display: block;
         margin: 60px auto;
+    }
+
+    .blog-card {
+        max-width: 350px;
+    }
+
+    .button.all-posts-btn {
+        margin-left: 0;
     }
 
     /* Single Blog Post Page */

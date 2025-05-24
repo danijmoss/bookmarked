@@ -168,7 +168,7 @@
         </div>
     </section>
 
-    <a href="<?php echo get_permalink( get_option('page_for_posts') ); ?>" class="button">See All Blog Posts</a>
+    <a href="<?php echo get_permalink( get_option('page_for_posts') ); ?>" class="button all-posts-btn">See All Blog Posts</a>
 
     <img class="divider" src="<?php echo get_template_directory_uri(); ?>/images/divider.png">
 
